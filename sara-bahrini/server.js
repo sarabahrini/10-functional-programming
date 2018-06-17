@@ -6,8 +6,10 @@ const fs = require('fs');
 const express = require('express');
 const PORT = process.env.PORT || 3000;
 const app = express();
-// TODO: Set your conString
-const conString = '';
+// DONE: Set your conString
+// for not Mac use this instead: const conString = 'postgres://postgres:1234@localhost:5432/kilovolt';
+const conString = 'postgres://localhost:5432/kilovolt';  
+
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => {
